@@ -1,0 +1,24 @@
+{{!< default}} 
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
+
+        {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+        {{#foreach tags}}
+        <div
+            style="
+            display: inline-block;
+            {{!-- background: #ddd; --}}
+            background: {{@custom.button_color}};
+            margin: 4px 4px;
+            border-radius: 16px;
+            padding: 4px 32px;
+            
+            ">
+            <a href="{{url}}" title="{{name}}" style=""><strong>{{count.posts}}</strong>
+                {{name}}</a>
+        </div>
+        {{/foreach}}
+        {{/get}}
+
+    </div>
+</main>
